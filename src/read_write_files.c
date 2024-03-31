@@ -5,9 +5,9 @@
 
 void writeNewWord(char newWord[MAX_LENGTH]) {
   FILE *file;
-  printf("1");
+
   file = fopen("./input/words.txt", "r+");
-  printf("2");
+
   if (file == 0) {
     printf("\n");
     printf("Desculpe mais teve algum problema na leitura no arquivo de "
@@ -26,7 +26,6 @@ void writeNewWord(char newWord[MAX_LENGTH]) {
   fprintf(file, "%s", newWord);
 
   fclose(file);
-  printf("Fim");
 }
 
 void readWordRandomic(char secretWord[MAX_LENGTH]) {

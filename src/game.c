@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char secretWord[30], letter, hangmanDisplay[MAX_LENGTH];
+char secretWord[MIN_LENGTH], letter, hangmanDisplay[MAX_LENGTH];
 int indicator = 0;
 
 void run(int *youWon, int *errors) {
@@ -43,13 +43,6 @@ void addNewSecretWord() {
   }
 }
 
-int validateIfLetterExist(char secretLetter, char choiceLetter) {
-  if (secretLetter == choiceLetter) {
-    return 1;
-  }
-  return 0;
-}
-
 void checketGameStatus(int *errors, int *youWon) {
   int hits = hitsExist();
   if (hits == 0) {
@@ -65,7 +58,7 @@ int hitsExist() {
   int countHit = 0;
   for (int i = 0; i < strlen(secretWord); i++) {
     if (letter) {
-      if (validateIfLetterExist(secretWord[i], letter)) {
+      if (secretWord[i] == letter) {
         countHit++;
         hangmanDisplay[i] = secretWord[i];
       }

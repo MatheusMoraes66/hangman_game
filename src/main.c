@@ -4,7 +4,6 @@ int main() {
   int errors = 0, youWon = 0;
 
   drawingWelcome();
-
   initializeVariables();
 
   do {

@@ -9,7 +9,6 @@ void run(int *youWon, int *errors);
 void initializeVariables();
 void receivesValue();
 void addNewSecretWord();
-int validateIfLetterExist(char secretLetter, char choiceLetter);
 void checketGameStatus(int *errors, int *youWon);
 int hitsExist();
 int validWon();
